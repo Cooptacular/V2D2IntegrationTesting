@@ -13,7 +13,7 @@
 			// run `bun run build`
 			import { DoppleXR } from "https://cooptacular.github.io/V2D2IntegrationTesting/js/dopple-sdk.js";
 
-			const selection = { "Hull Color": "Red" };
+			const selection = { "Customize": "No Car" };
 
 			const dopple = new DoppleXR({
 				container: document.getElementById("app"),
@@ -41,12 +41,12 @@
 			};
 
 			// update Selection
-			selection["Hull Color"] = "Red";
+			selection["Customize"] = "No Car";
 			await dopple.updateSelection(selection);
 
 			document.getElementById("select").onchange = (e) => {
 				// update selection Partially
-				dopple.updateSelection({ "Hull Color": e.target.value });
+				dopple.updateSelection({ "Customize": e.target.value });
 			};
 		</script>
 	</head>
@@ -62,8 +62,8 @@
 			Customize
 			<select id="select">
 				<option value="none">None</option>
-				<option value="Red" selected>Red</option>
-				<option value="Blue">Blue</option>
+				<option value="No Car" selected>No Car</option>
+				<option value="No Fabric">No Fabric</option>
 			</select>
 		</div>
 		
