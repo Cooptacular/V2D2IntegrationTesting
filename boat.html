@@ -41,12 +41,12 @@
 			};
 
 			// update Selection
-			selection["Customize"] = "No Car";
+			selection["Hull Color"] = "Red";
 			await dopple.updateSelection(selection);
 
 			document.getElementById("select").onchange = (e) => {
 				// update selection Partially
-				dopple.updateSelection({ "Customize": e.target.value });
+				dopple.updateSelection({ "Hull Color": e.target.value });
 			};
 		</script>
 	</head>
@@ -59,11 +59,10 @@
 		></div>
 		<div id="loader" style="position: absolute; top: 2px; right: 2px"></div>
 		<div style="position: absolute; top: 2px; left: 2px; z-index: 10">
-			Customize
+			Hull Color
 			<select id="select">
-				<option value="none">None</option>
-				<option value="No Car" selected>No Car</option>
-				<option value="No Fabric">No Fabric</option>
+				<option value="Red" selected>Red</option>
+				<option value="Blue">Blue</option>
 			</select>
 		</div>
 		
