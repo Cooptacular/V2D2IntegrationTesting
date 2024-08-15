@@ -8,27 +8,10 @@
 		<meta charset="UTF-8" />
 		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Bryan Matrix Prototype</title>
-	</head>
-	<body
-		style="height: 100%; width: 100%; padding: 0; margin: 0; position: relative"
-	>
-		<div
-			id="app"
-			style="height: 100%; width: 100%; background-color: #333"
-		></div>
-		<div id="loader" style="position: absolute; top: 2px; right: 2px"></div>
-		<div style="position: absolute; top: 2px; left: 2px; z-index: 10">
-			Customize
-			<select id="select">
-				<option value="none">None</option>
-				<option value="No Car" selected>No Car</option>
-				<option value="No Fabric">No Fabric</option>
-			</select>
-		</div>
+		<title>Bryan Test Integration</title>
 		<script type="module">
 			// run `bun run build`
-			import { DoppleXR } from "/js/dopple-sdk.js";
+			import { DoppleXR } from "https://cooptacular.github.io/V2D2IntegrationTesting/js/dopple-sdk.js";
 
 			const selection = { "Customize": "No Car" };
 
@@ -66,5 +49,23 @@
 				dopple.updateSelection({ "Customize": e.target.value });
 			};
 		</script>
+	</head>
+	<body
+		style="height: 100%; width: 100%; padding: 0; margin: 0; position: relative"
+	>
+		<div
+			id="app"
+			style="height: 100%; width: 100%; background-color: #333"
+		></div>
+		<div id="loader" style="position: absolute; top: 2px; right: 2px"></div>
+		<div style="position: absolute; top: 2px; left: 2px; z-index: 10">
+			Customize
+			<select id="select">
+				<option value="none">None</option>
+				<option value="No Car" selected>No Car</option>
+				<option value="No Fabric">No Fabric</option>
+			</select>
+		</div>
+		
 	</body>
 </html>
