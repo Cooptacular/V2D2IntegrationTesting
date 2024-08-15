@@ -1,0 +1,70 @@
+<!doctype html>
+<html
+	lang="en"
+	class="dark"
+	style="font-size: 14px; height: 100vh; width: 100vw; padding: 0; margin: 0"
+>
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bryan Matrix Prototype</title>
+	</head>
+	<body
+		style="height: 100%; width: 100%; padding: 0; margin: 0; position: relative"
+	>
+		<div
+			id="app"
+			style="height: 100%; width: 100%; background-color: #333"
+		></div>
+		<div id="loader" style="position: absolute; top: 2px; right: 2px"></div>
+		<div style="position: absolute; top: 2px; left: 2px; z-index: 10">
+			Customize
+			<select id="select">
+				<option value="none">None</option>
+				<option value="No Car" selected>No Car</option>
+				<option value="No Fabric">No Fabric</option>
+			</select>
+		</div>
+		<script type="module">
+			// run `bun run build`
+			import { DoppleXR } from "/dopple-sdk.js";
+
+			const selection = { "Customize": "No Car" };
+
+			const dopple = new DoppleXR({
+				container: document.getElementById("app"),
+				selection,
+				productVersion: "3",
+				owner: "dopple",
+				workspace: "matrix",
+				projectName: "carwithoutextension",
+			});
+
+			await dopple.load();
+
+			// Optional - load will already call this once.
+			dopple.resize();
+
+			dopple.run();
+
+			dopple.loadingManager.onProgress = (_url, loaded, total) => {
+				document.getElementById("loader").innerHTML =
+					`Loaded ${loaded} of ${total}`;
+			};
+
+			dopple.loadingManager.onLoad = () => {
+				document.getElementById("loader").innerHTML = "";
+			};
+
+			// update Selection
+			selection["Customize"] = "No Car";
+			await dopple.updateSelection(selection);
+
+			document.getElementById("select").onchange = (e) => {
+				// update selection Partially
+				dopple.updateSelection({ "Customize": e.target.value });
+			};
+		</script>
+	</body>
+</html>
