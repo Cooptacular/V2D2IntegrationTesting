@@ -15,7 +15,7 @@
 
 			let selection = { 
 				"Hull Trim": "Grey", //Hull Trim default value
-				"Speakers": "No fun allowed" //Speaker default value
+				"Speakers": "Deck and Canopy" //Speaker default value
 			};
 
 			const dopple = new DoppleXR({
@@ -44,21 +44,21 @@
 			};
 
 			// update Hull Trim
-			selection["Hull Trim"] = "Grey";
+			//selection["Hull Trim"] = "Grey";
 			await dopple.updateSelection(selection);
 
 			document.getElementById("select").onchange = (e) => {
 				// update selection Partially
-				dopple.updateSelection({ "Hull Trim": e.target.value });
+				dopple.updateSelection({ select: e.target.value });
 			};
-			// update Speakers
-			selection["Speakers"] = "No fun allowed";
-			await dopple.updateSelection(selection);
+			// // update Speakers
+			// selection["Speakers"] = "No fun allowed";
+			// await dopple.updateSelection(selection);
 
-			document.getElementById("select2").onchange = (e) => {
-				// update selection Partially
-				dopple.updateSelection({ "Speakers": e.target.value });
-			};
+			// document.getElementById("select2").onchange = (e) => {
+			// 	// update selection Partially
+			// 	dopple.updateSelection({ "Speakers": e.target.value });
+			// };
 		</script>
 	</head>
 	<body
@@ -77,10 +77,10 @@
 				<option value="Blue">Blue</option>
 			</select>
 			Speakers
-			<select id="select2">
-				<option value="Deck and Canopy">Deck and Canopy</option>
+			<select id="select">
+				<option value="Deck and Canopy" selected>Deck and Canopy</option>
 				<option value="Deck Only">Deck Only</option>
-				<option value="No fun allowed" selected>No fun allowed</option>
+				<option value="No fun allowed">No fun allowed</option>
 			</select>
 		</div>
 		
