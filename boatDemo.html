@@ -14,7 +14,6 @@
 			import { DoppleXR } from "https://cooptacular.github.io/V2D2IntegrationTesting/js/dopple-sdk.js";
 
 			const selection = { "Hull Trim": "Grey" };
-			//const speakerSelection = { "Speakers": "Deck and Canopy" };
 
 			const dopple = new DoppleXR({
 				container: document.getElementById("app"),
@@ -49,14 +48,6 @@
 				// update selection Partially
 				dopple.updateSelection({ "Hull Trim": e.target.value });
 			};
-			// update Speakers
-			selection["Speakers"] = "Deck and Canopy";
-			await dopple.updateSelection(selection);
-
-			document.getElementById("select2").onchange = (e) => {
-				// update selection Partially
-				dopple.updateSelection({ "Speakers": e.target.value });
-			};
 		</script>
 	</head>
 	<body
@@ -75,11 +66,11 @@
 				<option value="Blue">Blue</option>
 			</select>
 			Speakers
-			<select id="select2">
+			<!-- <select id="">
 				<option value="Deck and Canopy" selected>Deck and Canopy</option>
 				<option value="Deck Only">Deck Only</option>
 				<option value="No fun allowed">No fun allowed</option>
-			</select>
+			</select> -->
 		</div>
 		
 	</body>
