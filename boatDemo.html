@@ -13,7 +13,8 @@
 			// run `bun run build`
 			import { DoppleXR } from "https://cooptacular.github.io/V2D2IntegrationTesting/js/dopple-sdk.js";
 
-			const selection = { "Hull Trim": "Grey" };
+			const hullTrimSelection = { "Hull Trim": "Grey" };
+			const speakerSelection = { "Speakers": "Deck and Canopy" };
 
 			const dopple = new DoppleXR({
 				container: document.getElementById("app"),
@@ -40,13 +41,21 @@
 				document.getElementById("loader").innerHTML = "";
 			};
 
-			// update Selection
-			selection["Hull Color"] = "Red";
+			// update Hull Trim
+			selection["Hull Trim"] = "Grey";
 			await dopple.updateSelection(selection);
 
 			document.getElementById("select").onchange = (e) => {
 				// update selection Partially
 				dopple.updateSelection({ "Hull Trim": e.target.value });
+			};
+			// update Speakers
+			selection["Speakers"] = "Deck and Canopy";
+			await dopple.updateSelection(selection);
+
+			document.getElementById("select").onchange = (e) => {
+				// update selection Partially
+				dopple.updateSelection({ "Speakers": e.target.value });
 			};
 		</script>
 	</head>
@@ -59,11 +68,17 @@
 		></div>
 		<div id="loader" style="position: absolute; top: 2px; right: 2px"></div>
 		<div style="position: absolute; top: 2px; left: 2px; z-index: 10">
-			Hull Color
+			Hull Trim
 			<select id="select">
 				<option value="Grey" selected>Grey</option>
 				<option value="Red">Red</option>
 				<option value="Blue">Blue</option>
+			</select>
+			Speakers
+			<select id="speakerSelection">
+				<option value="Deck and Canopy" selected>Deck and Canopy</option>
+				<option value="Deck Only">Deck Only</option>
+				<option value="No fun allowed">No fun allowed</option>
 			</select>
 		</div>
 		
