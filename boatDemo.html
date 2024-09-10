@@ -48,6 +48,14 @@
 				// update selection Partially
 				dopple.updateSelection({ "Hull Trim": e.target.value });
 			};
+			// update Speakers
+			selection["Speakers"] = "Deck and Canopy";
+			await dopple.updateSelection(selection);
+
+			document.getElementById("select2").onchange = (e) => {
+				// update selection Partially
+				dopple.updateSelection({ "Hull Trim": e.target.value });
+			};
 		</script>
 	</head>
 	<body
@@ -66,7 +74,7 @@
 				<option value="Blue">Blue</option>
 			</select>
 			Speakers
-			<select id="">
+			<select id="select2">
 				<option value="Deck and Canopy" selected>Deck and Canopy</option>
 				<option value="Deck Only">Deck Only</option>
 				<option value="No fun allowed">No fun allowed</option>
