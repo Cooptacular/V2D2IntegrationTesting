@@ -13,7 +13,10 @@
 			// run `bun run build`
 			import { DoppleXR } from "https://cooptacular.github.io/V2D2IntegrationTesting/js/dopple-sdk.js";
 
-			let selection = { "Hull Trim": "Grey" };
+			let selection = { 
+				"Hull Trim": "Grey", //Hull Trim default value
+				"Speakers": "No fun allowed" //Speaker default value
+			};
 
 			const dopple = new DoppleXR({
 				container: document.getElementById("app"),
