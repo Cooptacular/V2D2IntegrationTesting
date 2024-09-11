@@ -43,7 +43,7 @@
 				document.getElementById("loader").innerHTML = "";
 			};
 			document.getElementById("hullTrimColorOption").onchange = (e) => {
-			// update selection Partially
+			// update Hull Trim
 				selection["Hull Trim"] = e.target.value;
 				dopple.updateSelection(selection);
 			};
@@ -51,6 +51,74 @@
 			//update Speakers
 			document.getElementById("speakerOption").onchange = (e) => {
 				selection["Speakers"] = e.target.value;
+				dopple.updateSelection(selection);
+			};
+			
+			//update Gunwale
+			document.getElementById("gunwaleOption").onchange = (e) => {
+				selection["Gunwale"] = e.target.value;
+				dopple.updateSelection(selection);
+			};
+
+			//update Interior
+			document.getElementById("interiorOption").onchange = (e) => {
+				selection["Interior"] = e.target.value;
+				dopple.updateSelection(selection);
+			};
+
+			//update Accent
+			document.getElementById("accentOption").onchange = (e) => {
+				selection["Accent"] = e.target.value;
+				dopple.updateSelection(selection);
+			};
+
+			//update Upholstery
+			document.getElementById("upholsteryOption").onchange = (e) => {
+				selection["Upholstery"] = e.target.value;
+				dopple.updateSelection(selection);
+			};
+
+			//update Deck
+			document.getElementById("deckOption").onchange = (e) => {
+				selection["Deck"] = e.target.value;
+				dopple.updateSelection(selection);
+			};
+			//update Table
+			document.getElementById("tableOption").onchange = (e) => {
+				selection["Table"] = e.target.value;
+				dopple.updateSelection(selection);
+			};
+
+			//update Bimini Top
+			document.getElementById("biminiTopOption").onchange = (e) => {
+				selection["Bimini Top"] = e.target.value;
+				dopple.updateSelection(selection);
+			};
+			//update Bimini Color
+			document.getElementById("biminiColorOption").onchange = (e) => {
+				selection["Bimini Color"] = e.target.value;
+				dopple.updateSelection(selection);
+			};
+
+			//update Camera
+			document.getElementById("cameraOption").onchange = (e) => {
+				selection["Camera"] = e.target.value;
+				dopple.updateSelection(selection);
+			};
+			//update Autorotate
+			document.getElementById("autorotateOption").onchange = (e) => {
+				selection["Autorotate"] = e.target.value;
+				dopple.updateSelection(selection);
+			};
+
+			//update Environment
+			document.getElementById("environmentOption").onchange = (e) => {
+				selection["Environment"] = e.target.value;
+				dopple.updateSelection(selection);
+			};
+			//update Rock the Boat
+			document.getElementById("rockTheBoatOption").onchange = (e) => {
+				selection["Rock the Boat"] = e.target.value;
 				dopple.updateSelection(selection);
 			};
 		</script>
@@ -73,6 +141,91 @@
 				<option value="Deck Only">Deck Only</option>
 				<option value="No fun allowed" selected>No fun allowed</option>
 			</select>
+			<br>
+			Gunwale
+			<select id="gunwaleOption">
+				<option value="Deck and Canopy">Deck and Canopy</option>
+				<option value="Deck Only">Deck Only</option>
+				<option value="No fun allowed" selected>No fun allowed</option>
+			</select>
+			<br>
+			Interior
+			<select id="interiorOption">
+				<option value="Deck and Canopy">Deck and Canopy</option>
+				<option value="Deck Only">Deck Only</option>
+				<option value="No fun allowed" selected>No fun allowed</option>
+			</select>
+			<br>
+			Accent
+			<select id="accentOption">
+				<option value="Deck and Canopy">Deck and Canopy</option>
+				<option value="Deck Only">Deck Only</option>
+				<option value="No fun allowed" selected>No fun allowed</option>
+			</select>
+			<br>
+			Upholstery
+			<select id="upholsteryOption">
+				<option value="Deck and Canopy">Deck and Canopy</option>
+				<option value="Deck Only">Deck Only</option>
+				<option value="No fun allowed" selected>No fun allowed</option>
+			</select>
+			<br>
+			Deck
+			<select id="deckOption">
+				<option value="Deck and Canopy">Deck and Canopy</option>
+				<option value="Deck Only">Deck Only</option>
+				<option value="No fun allowed" selected>No fun allowed</option>
+			</select>
+			<br>
+			Table
+			<select id="tableOption">
+				<option value="Deck and Canopy">Deck and Canopy</option>
+				<option value="Deck Only">Deck Only</option>
+				<option value="No fun allowed" selected>No fun allowed</option>
+			</select>
+			<br>
+			Bimini Top
+			<select id="biminiTopOption">
+				<option value="Deck and Canopy">Deck and Canopy</option>
+				<option value="Deck Only">Deck Only</option>
+				<option value="No fun allowed" selected>No fun allowed</option>
+			</select>
+			<br>
+			Bimini Color					
+			<select id="biminiColorOption">
+				<option value="Deck and Canopy">Deck and Canopy</option>
+				<option value="Deck Only">Deck Only</option>
+				<option value="No fun allowed" selected>No fun allowed</option>
+			</select>
+			<br>
+			Camera
+			<select id="cameraOption">
+				<option value="Deck and Canopy">Deck and Canopy</option>
+				<option value="Deck Only">Deck Only</option>
+				<option value="No fun allowed" selected>No fun allowed</option>
+			</select>
+			<br>
+			Autorotate
+			<select id="autorotateOption">
+				<option value="Deck and Canopy">Deck and Canopy</option>
+				<option value="Deck Only">Deck Only</option>
+				<option value="No fun allowed" selected>No fun allowed</option>
+			</select>
+			<br>
+			Environment
+			<select id="environmentOption">
+				<option value="Deck and Canopy">Deck and Canopy</option>
+				<option value="Deck Only">Deck Only</option>
+				<option value="No fun allowed" selected>No fun allowed</option>
+			</select>
+			<br>
+			Rock the Boat
+			<select id="rockTheBoatOption">
+				<option value="Deck and Canopy">Deck and Canopy</option>
+				<option value="Deck Only">Deck Only</option>
+				<option value="No fun allowed" selected>No fun allowed</option>
+			</select>
+			<br>
 			</p>
 		</div>
 		<div id="app"></div>
