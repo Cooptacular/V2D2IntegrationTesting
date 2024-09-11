@@ -19,11 +19,9 @@ body {
 #menus {
 	width: 100%;
 	padding: 20px;
-	background-color: #6a6a6a ;
-	z-index: 1;
+	background-color: #6a6a6a;
 }
 #app {
-	
 	width: 100%;
 	background-color: #333;
 	z-index: 0;
@@ -35,7 +33,7 @@ body {
 	position: absolute;
 	top: 2px;
 	left: 2px;
-	z-index: 2;
+	z-index: 10;
 }
 canvas {
 	width: 100%;
