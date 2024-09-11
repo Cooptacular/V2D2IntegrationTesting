@@ -88,33 +88,28 @@
 				selection["Bimini Top"] = e.target.value;
 				dopple.updateSelection(selection);
 			};
-			//update Bimini Color
-			document.getElementById("biminiColorOption").onchange = (e) => {
-				selection["Bimini Color"] = e.target.value;
+
+			update Camera
+			document.getElementById("cameraOption").onchange = (e) => {
+				selection["Camera"] = e.target.value;
+				dopple.updateSelection(selection);
+			};
+			update Autorotate
+			document.getElementById("autorotateOption").onchange = (e) => {
+				selection["Autorotate"] = e.target.value;
 				dopple.updateSelection(selection);
 			};
 
-			// update Camera
-			// document.getElementById("cameraOption").onchange = (e) => {
-			// 	selection["Camera"] = e.target.value;
-			// 	dopple.updateSelection(selection);
-			// };
-			// update Autorotate
-			// document.getElementById("autorotateOption").onchange = (e) => {
-			// 	selection["Autorotate"] = e.target.value;
-			// 	dopple.updateSelection(selection);
-			// };
-
-			// update Environment
-			// document.getElementById("environmentOption").onchange = (e) => {
-			// 	selection["Environment"] = e.target.value;
-			// 	dopple.updateSelection(selection);
-			// };
-			// update Rock the Boat
-			// document.getElementById("rockTheBoatOption").onchange = (e) => {
-			// 	selection["Rock the Boat"] = e.target.value;
-			// 	dopple.updateSelection(selection);
-			// };
+			update Environment
+			document.getElementById("environmentOption").onchange = (e) => {
+				selection["Environment"] = e.target.value;
+				dopple.updateSelection(selection);
+			};
+			update Rock the Boat
+			document.getElementById("rockTheBoatOption").onchange = (e) => {
+				selection["Rock the Boat"] = e.target.value;
+				dopple.updateSelection(selection);
+			};
 		</script>
 	</head>
 	<body>
@@ -172,24 +167,19 @@
 				<option value="No Table">No Table</option>
 			</select>
 			<br>
-			Bimini Top
+			Bimini Top					
 			<select id="biminiTopOption">
-				<option value="Bimini">#1 Bimini Lane</option>
-				<option value="No Bimini">No Bimini, No Doubt</option>
-			</select>
-			<br>
-			Bimini Color					
-			<select id="biminiColorOption">
-				<option value="Red">Red</option>
+				<option value="Number 1 Bimini Lane">Red</option>
 				<option value="Blue">Blue</option>
 				<option value="Black">Black</option>
-				<option value="Grey">Grey</option>
+				<option value="White">White</option>
+				<option value="No Bimini No Doubt">No Bimini No Doubt</option>
 			</select>
 			<br>
-			<!-- Camera
+			Camera
 			<select id="cameraOption">
-				<option value="Camera1 default">Camera1 default</option>
-				<option value="Camera2 deck">Camera2 deck</option>
+				<option value="Default">Default</option>
+				<option value="Deck">Deck</option>
 			</select>
 			<br>
 			Autorotate
@@ -207,11 +197,10 @@
 			<br>
 			Rock the Boat
 			<select id="rockTheBoatOption">
-				<option value="Option 1 Name">Option 1 Name</option>
-				<option value="Option 2 Name">Option 2 Name</option>
-				<option value="Option 3 Name" selected>Option 3 Name</option>
+				<option value="1">Upright</option>
+				<option value="2">Hold On To Something</option>
 			</select>
-			<br> -->
+			<br>
 			</p>
 		</div>
 		<div id="app"></div>
