@@ -14,7 +14,7 @@
 			import { DoppleXR } from "https://cooptacular.github.io/V2D2IntegrationTesting/js/dopple-sdk.js";
 
 			const selection = { 
-				"Hull Trim": "Grey", //Hull Trim default value
+				"Hull": "Red", //Hull Trim default value
 				"Speakers": "No fun allowed" //Speaker default value
 			};
 
@@ -42,9 +42,9 @@
 			dopple.loadingManager.onLoad = () => {
 				document.getElementById("loader").innerHTML = "";
 			};
-			document.getElementById("hullTrimColorOption").onchange = (e) => {
+			document.getElementById("hullColorOption").onchange = (e) => {
 			// update Hull Trim
-				selection["Hull Trim"] = e.target.value;
+				selection["Hull"] = e.target.value;
 				dopple.updateSelection(selection);
 			};
 
@@ -127,9 +127,22 @@
 		<div id="menus">
 			<h1>Boat Integration Test</h1>
 			<p>
-			Hull Trim
-			<select id="hullTrimColorOption">
-				<option value="Grey" selected>Grey</option>
+				Hull Color
+				<div id="hullColorOption">
+					<!-- Red color option -->
+					<input type="radio" id="red" name="color" value="Red" hidden>
+					<label for="red" class="swatch" style="background-color: red;"></label>
+			
+					<!-- Black color option -->
+					<input type="radio" id="black" name="color" value="Black" hidden>
+					<label for="black" class="swatch" style="background-color: #000000;"></label>
+			
+					<!-- Blue color option -->
+					<input type="radio" id="blue" name="color" value="Blue" hidden>
+					<label for="blue" class="swatch" style="background-color: #0000ff;"></label>
+				</div>
+				Hull
+			<select id="hullColorOption">
 				<option value="Red">Red</option>
 				<option value="Blue">Blue</option>
 				<option value="Yellow">Yellow</option>
@@ -148,12 +161,12 @@
 				<option value="Black">Black</option>
 			</select>
 			<br>
-			Interior
+			<!-- Interior
 			<select id="interiorOption">
 				<option value="Option 1 Name">Option 1 Name</option>
 				<option value="Option 2 Name">Option 2 Name</option>
 				<option value="Option 3 Name" selected>Option 3 Name</option>
-			</select>
+			</select> -->
 			<br>
 			Accent
 			<select id="accentOption">
