@@ -44,21 +44,22 @@
 			};
 
 			// update Hull Trim
-			selection["Hull Trim"] = "Grey";
-			await dopple.updateSelection(selection);
+			//selection["Hull Trim"] = "Grey";
+			//await dopple.updateSelection(selection);
 
-			document.getElementById("select").onchange = (e) => {
-				// update selection Partially
-				dopple.updateSelection({ "Hull Trim": e.target.value });
+			document.getElementById("hullTrimColorOption").onchange = (e) => {
+			// update selection Partially
+				selection["Hull Trim"] = e.target.value;
+				dopple.updateSelection(selection);
 			};
-			// update Speakers
-			selection["Speakers"] = "No fun allowed";
-			await dopple.updateSelection(selection);
+			//update Speakers
+			//selection["Speakers"] = "No fun allowed";
+			//await dopple.updateSelection(selection);
 
-			document.getElementById("select2").onchange = (e) => {
+			document.getElementById("speakerOption").onchange = (e) => {
 				// update selection Partially
-				console.log({ ...selection, "Speakers": e.target.value });
-				dopple.updateSelection({ "Hull Trim": "Yellow", "Speakers": e.target.value });
+				selection["Speakers"] = e.target.value;
+				dopple.updateSelection(selection);
 			};
 		</script>
 	</head>
@@ -72,14 +73,14 @@
 		<div id="loader" style="position: absolute; top: 2px; right: 2px"></div>
 		<div style="position: absolute; top: 2px; left: 2px; z-index: 10">
 			Hull Trim
-			<select id="select">
+			<select id="hullTrimColorOption">
 				<option value="Grey" selected>Grey</option>
 				<option value="Red">Red</option>
 				<option value="Blue">Blue</option>
 				<option value="Yellow">Yellow</option>
 			</select>
 			Speakers
-			<select id="select2">
+			<select id="speakerOption">
 				<option value="Deck and Canopy">Deck and Canopy</option>
 				<option value="Deck Only">Deck Only</option>
 				<option value="No fun allowed" selected>No fun allowed</option>
