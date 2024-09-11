@@ -14,18 +14,13 @@ body {
 	background-color: #333;
 	color: #FFF; 
 }
-.container {
-    display: inline-block; /* This makes the divs sit side by side */
-    justify-content: space-between;
-    padding: 20px;
-}
 #menus {
 	position: relative;
 	padding: 10px 10px 30px 10px;
 	background-color: #6a6a6a ;
 }
 #app {
-	padding-top: 30px;
+	margin-top: 30px;
 	height: 100%;
 	width: 100%;
 	background-color: #333;
