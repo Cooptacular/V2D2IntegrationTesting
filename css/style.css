@@ -14,14 +14,14 @@ body {
 	background-color: #333;
 	color: #FFF; 
 }
+
 #menus {
-	position: relative;
+	width: 100%;
 	padding: 10px 10px 30px 10px;
 	background-color: #6a6a6a ;
 }
 #app {
-	margin-top: 30px;
-	height: 100%;
+	flex-grow: 1; /* This makes the bottom div fill all remaining height */
 	width: 100%;
 	background-color: #333;
 }
