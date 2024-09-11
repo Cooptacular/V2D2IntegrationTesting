@@ -1,0 +1,85 @@
+<!doctype html>
+<html
+	lang="en"
+	class="dark"
+>
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bryan Test Integration - Boat</title>
+		<link rel="stylesheet" href="css/style.css">
+		<script type="module">
+			// run `bun run build`
+			import { DoppleXR } from "https://cooptacular.github.io/V2D2IntegrationTesting/js/dopple-sdk.js";
+
+			const selection = { 
+				"Hull Trim": "Grey", //Hull Trim default value
+				"Speakers": "No fun allowed" //Speaker default value
+			};
+
+			const dopple = new DoppleXR({
+				container: document.getElementById("app"),
+				selection,
+				productVersion: "3",
+				owner: "dopple",
+				workspace: "ProductValidation",
+				projectName: "boat-bc-blenderTest",
+			});
+
+			await dopple.load();
+
+			// Optional - load will already call this once.
+			dopple.resize();
+
+			dopple.run();
+
+			dopple.loadingManager.onProgress = (_url, loaded, total) => {
+				document.getElementById("loader").innerHTML =
+					`Loaded ${loaded} of ${total}`;
+			};
+
+			dopple.loadingManager.onLoad = () => {
+				document.getElementById("loader").innerHTML = "";
+			};
+
+			// update Hull Trim
+			//selection["Hull Trim"] = "Grey";
+			//await dopple.updateSelection(selection);
+
+			document.getElementById("hullTrimColorOption").onchange = (e) => {
+			// update selection Partially
+				selection["Hull Trim"] = e.target.value;
+				dopple.updateSelection(selection);
+			};
+			//update Speakers
+			//selection["Speakers"] = "No fun allowed";
+			//await dopple.updateSelection(selection);
+
+			document.getElementById("speakerOption").onchange = (e) => {
+				// update selection Partially
+				selection["Speakers"] = e.target.value;
+				dopple.updateSelection(selection);
+			};
+		</script>
+	</head>
+	<body>
+		<div>
+			Hull Trim
+			<select id="hullTrimColorOption">
+				<option value="Grey" selected>Grey</option>
+				<option value="Red">Red</option>
+				<option value="Blue">Blue</option>
+				<option value="Yellow">Yellow</option>
+			</select>
+			Speakers
+			<select id="speakerOption">
+				<option value="Deck and Canopy">Deck and Canopy</option>
+				<option value="Deck Only">Deck Only</option>
+				<option value="No fun allowed" selected>No fun allowed</option>
+			</select>
+		</div>
+		<div id="app"></div>
+		<div id="loader" style="position: absolute; top: 2px; right: 2px"></div>
+	</body>
+</html>
