@@ -14,10 +14,14 @@ body {
 	background-color: #333;
 	color: #FFF; 
 }
-
+#menus {
+	position: relative;
+	padding: 10px 10px 30px 10px;
+	margin-top: 10px;
+}
 #app {
 	padding-top: 30px;
-	height: 95%;
+	height: 100%;
 	width: 100%;
 	background-color: #333;
 }
