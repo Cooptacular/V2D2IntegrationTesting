@@ -57,7 +57,8 @@
 
 			document.getElementById("select2").onchange = (e) => {
 				// update selection Partially
-				dopple.updateSelection({ ...selection, "Speakers": e.target.value });
+				console.log({ ...selection, "Speakers": e.target.value });
+				dopple.updateSelection({ "Hull Trim": "Yellow", "Speakers": e.target.value });
 			};
 		</script>
 	</head>
