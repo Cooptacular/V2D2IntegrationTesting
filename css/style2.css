@@ -1,5 +1,6 @@
 html {
 	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
 	height: 100vh;
 	width: 100vw;
 	padding: 0;
@@ -13,24 +14,23 @@ body {
 	background-color: #333;
 	color: #FFF; 
 	display: flex;
-	flex-direction: column;
 }
 
 #menus {
-	display: inline-block;
-	width: 25%;
+	display: block;
+	width: 15%;
 	padding: 20px;
 	background-color: #6a6a6a;
 	z-index: 2;
 }
 #app {
-	width: 75%;
-	height: 75%;
+	width: 85%;
+	height: 85%;
 	background-color: #333;
 	z-index: 0;
-	position: absolute;
+	position: relative;
 	justify-content: center;
-	display: inline-block;
+	display: block;
 }
 
 #loader {
