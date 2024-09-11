@@ -54,7 +54,67 @@
 				dopple.updateSelection(selection);
 			};
 			
-		
+			//update Gunwale
+			document.getElementById("gunwaleOption").onchange = (e) => {
+				selection["Gunwale"] = e.target.value;
+				dopple.updateSelection(selection);
+			};
+
+			//update Accent
+			document.getElementById("accentOption").onchange = (e) => {
+				selection["Accent"] = e.target.value;
+				dopple.updateSelection(selection);
+			};
+
+			//update Upholstery
+			document.getElementById("upholsteryOption").onchange = (e) => {
+				selection["Upholstery"] = e.target.value;
+				dopple.updateSelection(selection);
+			};
+
+			//update Deck
+			document.getElementById("deckOption").onchange = (e) => {
+				selection["Deck"] = e.target.value;
+				dopple.updateSelection(selection);
+			};
+			//update Table
+			document.getElementById("tableOption").onchange = (e) => {
+				selection["Table"] = e.target.value;
+				dopple.updateSelection(selection);
+			};
+
+			//update Bimini Top
+			document.getElementById("biminiTopOption").onchange = (e) => {
+				selection["Bimini Top"] = e.target.value;
+				dopple.updateSelection(selection);
+			};
+			//update Bimini Color
+			document.getElementById("biminiColorOption").onchange = (e) => {
+				selection["Bimini Color"] = e.target.value;
+				dopple.updateSelection(selection);
+			};
+
+			//update Camera
+			document.getElementById("cameraOption").onchange = (e) => {
+				selection["Camera"] = e.target.value;
+				dopple.updateSelection(selection);
+			};
+			//update Autorotate
+			document.getElementById("autorotateOption").onchange = (e) => {
+				selection["Autorotate"] = e.target.value;
+				dopple.updateSelection(selection);
+			};
+
+			//update Environment
+			document.getElementById("environmentOption").onchange = (e) => {
+				selection["Environment"] = e.target.value;
+				dopple.updateSelection(selection);
+			};
+			//update Rock the Boat
+			document.getElementById("rockTheBoatOption").onchange = (e) => {
+				selection["Rock the Boat"] = e.target.value;
+				dopple.updateSelection(selection);
+			};
 		</script>
 	</head>
 	<body>
@@ -63,7 +123,7 @@
 			<p>
 			Hull
 			<select id="hullColorOption">
-				<option value="Red" selected>Red</option>
+				<option value="Red">Red</option>
 				<option value="Blue">Blue</option>
 				<option value="Yellow">Yellow</option>
 			</select>
@@ -75,7 +135,7 @@
 				<option value="No fun allowed" selected>No fun allowed</option>
 			</select>
 			<br>
-			<!-- Gunwale
+			Gunwale
 			<select id="gunwaleOption">
 				<option value="White">White</option>
 				<option value="Black">Black</option>
@@ -148,7 +208,7 @@
 				<option value="Option 2 Name">Option 2 Name</option>
 				<option value="Option 3 Name" selected>Option 3 Name</option>
 			</select>
-			<br> -->
+			<br>
 			</p>
 		</div>
 		<div id="app"></div>
