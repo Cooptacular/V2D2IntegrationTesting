@@ -13,7 +13,7 @@
 			// run `bun run build`
 			import { DoppleXR } from "https://cooptacular.github.io/V2D2IntegrationTesting/js/dopple-sdk.js";
 
-			let selection = { 
+			const selection = { 
 				"Hull Trim": "Grey", //Hull Trim default value
 				"Speakers": "No fun allowed" //Speaker default value
 			};
@@ -57,7 +57,7 @@
 
 			document.getElementById("select2").onchange = (e) => {
 				// update selection Partially
-				dopple.updateSelection({ "Speakers": e.target.value });
+				dopple.updateSelection({ ...selection, "Speakers": e.target.value });
 			};
 		</script>
 	</head>
