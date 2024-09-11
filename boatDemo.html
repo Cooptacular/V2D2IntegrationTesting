@@ -42,29 +42,20 @@
 			dopple.loadingManager.onLoad = () => {
 				document.getElementById("loader").innerHTML = "";
 			};
-
-			// update Hull Trim
-			//selection["Hull Trim"] = "Grey";
-			//await dopple.updateSelection(selection);
-
 			document.getElementById("hullTrimColorOption").onchange = (e) => {
 			// update selection Partially
 				selection["Hull Trim"] = e.target.value;
 				dopple.updateSelection(selection);
 			};
-			//update Speakers
-			//selection["Speakers"] = "No fun allowed";
-			//await dopple.updateSelection(selection);
 
+			//update Speakers
 			document.getElementById("speakerOption").onchange = (e) => {
-				// update selection Partially
 				selection["Speakers"] = e.target.value;
 				dopple.updateSelection(selection);
 			};
 		</script>
 	</head>
 	<body>
-		<div id="app"></div>
 		<div id="menus">
 			Hull Trim
 			<select id="hullTrimColorOption">
@@ -80,6 +71,7 @@
 				<option value="No fun allowed" selected>No fun allowed</option>
 			</select>
 		</div>
+		<div id="app"></div>
 		<div id="loader" style="position: absolute; top: 2px; right: 2px"></div>
 	</body>
 </html>
