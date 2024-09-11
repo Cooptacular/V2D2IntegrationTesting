@@ -6,6 +6,12 @@ html {
 	padding: 0;
 	margin: 0;
 }
+h1 {
+	font-size: 18px;
+}
+p {
+	line-height: 24px;
+}
 body {
 	height: 100%; 
 	width: 100%;
@@ -15,7 +21,6 @@ body {
 	color: #FFF; 
 	display: flex;
 }
-
 #menus {
 	display: block;
 	width: 15%;
