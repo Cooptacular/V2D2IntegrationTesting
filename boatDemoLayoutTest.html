@@ -44,7 +44,7 @@
 			};
 			document.getElementById("hullColorOption").onchange = (e) => {
 			// update Hull Trim
-				selection["Hull"] = e.target.value;
+				selection["Hull Trim"] = e.target.value;
 				dopple.updateSelection(selection);
 			};
 
@@ -121,7 +121,7 @@
 		<div id="menus">
 			<h1>Boat Integration Test</h1>
 			<p>
-			Hull
+			Hull Trim
 			<select id="hullColorOption">
 				<option value="Red">Red</option>
 				<option value="Blue">Blue</option>
