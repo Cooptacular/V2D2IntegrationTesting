@@ -10,18 +10,19 @@ body {
 	width: 100%;
 	padding: 0;
 	margin: 0;
-	position: relative;
 	background-color: #333;
 	color: #FFF; 
+	display: flex;
+	flex-direction: column;
 }
 
 #menus {
 	width: 100%;
-	padding: 10px 10px 30px 10px;
+	padding: 20px;
 	background-color: #6a6a6a ;
 }
 #app {
-	flex-grow: 1; /* This makes the bottom div fill all remaining height */
+	
 	width: 100%;
 	background-color: #333;
 }
@@ -31,4 +32,25 @@ body {
 	top: 2px;
 	left: 2px;
 	z-index: 10;
+}
+#container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+}
+
+#app {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
 }
