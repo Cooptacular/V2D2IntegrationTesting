@@ -15,7 +15,7 @@ body {
 	color: #FFF; 
 }
 .container {
-    display: flex; /* This makes the divs sit side by side */
+    display: inline-block; /* This makes the divs sit side by side */
     justify-content: space-between;
     padding: 20px;
 }
