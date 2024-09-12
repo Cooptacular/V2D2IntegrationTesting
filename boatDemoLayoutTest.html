@@ -16,13 +16,14 @@
 			const selection = { 
 				"Hull Color": "Red", //Hull Trim default value
 				"Speakers": "No fun allowed", //Speaker default value
-				"Autorotate": "On", // autorotate On by default
+				"Camera": "Default", // default camera
+				// "Autorotate": "On", // autorotate On by default
 			};
 
 			const dopple = new DoppleXR({
 				container: document.getElementById("app"),
 				selection,
-				productVersion: "9",
+				productVersion: "11",
 				owner: "dopple",
 				workspace: "ProductValidation",
 				projectName: "boat-bc-blenderTest",
@@ -44,18 +45,18 @@
 				document.getElementById("loader").innerHTML = "";
 			};
 			document.getElementById("hullColorOption").onchange = (e) => {
-			// update Hull Color - ready
+			// update Hull Color
 				selection["Hull Color"] = e.target.value;
 				dopple.updateSelection(selection);
 			};
 
-			//update Speakers - ready
+			//update Speaker
 			document.getElementById("speakerOption").onchange = (e) => {
 				selection["Speakers"] = e.target.value;
 				dopple.updateSelection(selection);
 			};
 			
-			//update Gunwale - ready
+			//update Gunwale
 			document.getElementById("gunwaleOption").onchange = (e) => {
 				selection["Gunwale"] = e.target.value;
 				dopple.updateSelection(selection);
@@ -150,10 +151,10 @@
 			<br>
 			Upholstery
 			<select id="upholsteryOption">
-				<option value="Red">Black</option>
-				<option value="Grey">White</option>
+				<option value="Red">Red</option>
+				<option value="Grey">Grey</option>
 				<option value="Black">Black</option>
-				<option value="Blue">Grey</option>
+				<option value="Blue">Blue</option>
 			</select>
 			<br>
 			Deck
