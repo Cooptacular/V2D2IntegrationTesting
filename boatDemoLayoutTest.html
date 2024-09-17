@@ -11,13 +11,13 @@
 		<link rel="stylesheet" href="css/style2.css">
 		<script type="module">
 			// run `bun run build`
-			import { DoppleXR } from "https://cooptacular.github.io/V2D2IntegrationTesting/js/dopple-sdk.js";
+			import { DoppleXR } from "https://builds.dopple.io/dopple-sdk/releases/alpha/dopple-sdk.js";
 
 			const selection = { 
 				"Hull Color": "Red", //Hull Trim default value
 				"Speakers": "No fun allowed", //Speaker default value
 				"Camera": "Default", // default camera
-				// "Autorotate": "On", // autorotate On by default
+				"Autorotate": "On", // autorotate On by default
 			};
 
 			const dopple = new DoppleXR({
