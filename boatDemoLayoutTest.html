@@ -23,7 +23,7 @@
 			const dopple = new DoppleXR({
 				container: document.getElementById("app"),
 				selection,
-				productVersion: "12",
+				productVersion: "11",
 				owner: "dopple",
 				workspace: "ProductValidation",
 				projectName: "boat-bc-blenderTest",
@@ -86,16 +86,16 @@
 			};
 
 			//update Bimini Top Color
-			document.getElementById("biminiTopColorOption").onchange = (e) => {
+			document.getElementById("biminiTopOption").onchange = (e) => {
 				selection["Bimini Top"] = e.target.value;
 				dopple.updateSelection(selection);
 			};
 
 			//update Bimini Top OnOff
-			document.getElementById("biminiTopOnOffOption").onchange = (e) => {
-				selection["Bimini Top"] = e.target.value;
-				dopple.updateSelection(selection);
-			};
+			// document.getElementById("biminiTopOnOffOption").onchange = (e) => {
+			// 	selection["Bimini Top"] = e.target.value;
+			// 	dopple.updateSelection(selection);
+			// };
 
 			//update Camera
 			document.getElementById("cameraOption").onchange = (e) => {
@@ -176,19 +176,22 @@
 			</select>
 			<br>
 			Bimini Top					
-			<select id="biminiTopColorOption">
-				<option value="Red">Red</option>
+			<select id="biminiTopOption">
+				<option value="Red">#1 Bimini Lane</option>
 				<option value="Blue">Blue</option>
 				<option value="Black">Black</option>
 				<option value="White">White</option>
 			</select>
 			<br>
-			Bimini Top					
+			<!-- Bimini Top					
 			<select id="biminiTopOnOffOption">
-				<option value="Bimini On">Bimini On</option>
+				<option value="Red">Red</option>
+				<option value="Blue">Blue</option>
+				<option value="Black">Black</option>
+				<option value="White">White</option>
 				<option value="No Bimini No Doubt">No Bimini No Doubt</option>
 			</select>
-			<br>
+			<br> -->
 			Camera
 			<select id="cameraOption">
 				<option value="Default">Default</option>
