@@ -41,6 +41,42 @@
 			dopple.resize({ trackParentSize: true });
 		
 			dopple.run();
+
+			//config code
+			const arms_select = document.getElementById("arms");
+arms_select.addEventListener("change", (e) => {
+	dopple.updateSelection({
+		"arms": e.target.value
+	});
+});
+
+const base_select = document.getElementById("base");
+base_select.addEventListener("change", (e) => {
+	dopple.updateSelection({
+		"base": e.target.value
+	});
+});
+
+const Autorotate_select = document.getElementById("Autorotate");
+Autorotate_select.addEventListener("change", (e) => {
+	dopple.updateSelection({
+		"Autorotate": e.target.value
+	});
+});
+
+const cameras_select = document.getElementById("cameras");
+cameras_select.addEventListener("change", (e) => {
+	dopple.updateSelection({
+		"cameras": e.target.value
+	});
+});
+
+const light_select = document.getElementById("light");
+light_select.addEventListener("change", (e) => {
+	dopple.updateSelection({
+		"light": e.target.value
+	});
+});
 		</script>
 	</head>
 	<body
@@ -82,41 +118,6 @@
 		<option value="off">off</option>
 </select>
 <br />
-const arms_select = document.getElementById("arms");
-arms_select.addEventListener("change", (e) => {
-	dopple.updateSelection({
-		"arms": e.target.value
-	});
-});
-
-const base_select = document.getElementById("base");
-base_select.addEventListener("change", (e) => {
-	dopple.updateSelection({
-		"base": e.target.value
-	});
-});
-
-const Autorotate_select = document.getElementById("Autorotate");
-Autorotate_select.addEventListener("change", (e) => {
-	dopple.updateSelection({
-		"Autorotate": e.target.value
-	});
-});
-
-const cameras_select = document.getElementById("cameras");
-cameras_select.addEventListener("change", (e) => {
-	dopple.updateSelection({
-		"cameras": e.target.value
-	});
-});
-
-const light_select = document.getElementById("light");
-light_select.addEventListener("change", (e) => {
-	dopple.updateSelection({
-		"light": e.target.value
-	});
-});
-
-	</body>
+</body>
 </html>
 
