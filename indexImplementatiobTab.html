@@ -4,117 +4,22 @@
 	class="dark"
 	style="font-size: 14px; height: 100vh; width: 100vw; padding: 0; margin: 0"
 >
-	<head>
-		<meta charset="UTF-8" />
-		
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Bryan Implementation CopyPaste Test</title>
-		<script type="module">
-			import { DoppleXR } from "https://builds.dopple.io/packages/dopple-sdk@alpha/dopple-sdk.js";
-		
-			const sessionId = window.crypto.randomUUID();
-		
-			// Intialize Dopple and load the product
-			const dopple = new DoppleXR({
-				container: document.querySelector("#dopple-container"), // Pass your container element here
-				selection: {},
-				productVersion: "23",
-				owner: "dopple",
-				workspace: "demo",
-				projectName: "anthros-ph-08-12",
-				logNamespace: "sdk",
-				sessionId,
-			});
-		
-			await dopple.load();
-		
-			const selected = Object.entries(dopple.matrix.choices).reduce(
-				(acc, [key, value]) => {
-					acc[key] = Object.keys(value.options)[0];
-					return acc;
-				},
-				{},
-			);
-		
-			await dopple.updateSelection(selected);
-		
-			dopple.resize({ trackParentSize: true });
-		
-			dopple.run();
-
-			//config code
-			const arms_select = document.getElementById("arms");
-arms_select.addEventListener("change", (e) => {
-	dopple.updateSelection({
-		"arms": e.target.value
-	});
-});
-
-const base_select = document.getElementById("base");
-base_select.addEventListener("change", (e) => {
-	dopple.updateSelection({
-		"base": e.target.value
-	});
-});
-
-const Autorotate_select = document.getElementById("Autorotate");
-Autorotate_select.addEventListener("change", (e) => {
-	dopple.updateSelection({
-		"Autorotate": e.target.value
-	});
-});
-
-const cameras_select = document.getElementById("cameras");
-cameras_select.addEventListener("change", (e) => {
-	dopple.updateSelection({
-		"cameras": e.target.value
-	});
-});
-
-const light_select = document.getElementById("light");
-light_select.addEventListener("change", (e) => {
-	dopple.updateSelection({
-		"light": e.target.value
-	});
-});
-</script>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Bell Helmet V1 Test</title>
+	<script src="https://builds.dopple.io/atlatl-visual-component/releases/current/index.js" defer></script>
+	
 </head>
-	<body
-		style="height: 100%; width: 100%; padding: 0; margin: 0; position: relative"
-	>
-		<label for="arms">arms</label>
-<select id="arms">
-	<option value="arms visible">arms visible</option>
-		<option value="no arms">no arms</option>
-</select>
-<br />
-<label for="base">base</label>
-<select id="base">
-	<option value="5 spoke">5 spoke</option>
-		<option value="4 spoke">4 spoke</option>
-</select>
-<br />
-<label for="Autorotate">Autorotate</label>
-<select id="Autorotate">
-	<option value="on">on</option>
-		<option value="off">off</option>
-</select>
-<br />
-<label for="cameras">cameras</label>
-<select id="cameras">
-	<option value="camera front">camera front</option>
-		<option value="camera back">camera back</option>
-</select>
-<br />
-<label for="light">light</label>
-<select id="light">
-	<option value="on">on</option>
-		<option value="off">off</option>
-</select>
-<br />
-<!-- <div id="app" style="height: 100%; width: 100%; background-color: #333"></div> -->
-<!-- <div id="loader" style="position: absolute; top: 2px; right: 2px"></div> -->
-<div id="dopple-container"></div>
+<body>
+	<atlatl-visual client-id="02388d2f-0750-4815-aa79-a284820735fa">
+		<av-product namespace="bellhelmet-assets" name="br8-carbon" version="10"></av-product>
+		<av-native-ui>
+		  <av-ar native-button></av-ar>
+		  <av-snapshot native-button></av-snapshot>
+		  <av-fullscreen native-button></av-fullscreen>
+		</av-native-ui>
+	  </atlatl-visual>	
 </body>
 </html>
 
