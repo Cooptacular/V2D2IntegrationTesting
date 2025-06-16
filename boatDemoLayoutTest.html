@@ -119,7 +119,23 @@
 				selection["Rock the Boat"] = e.target.value;
 				dopple.updateSelection(selection);
 			};
-		</script>
+
+			const dopple = new DoppleXR({ /* ... */ });
+
+			// Launch AR automatically on supported devices, and return an empty string
+			await dopple.startAR();
+			// Generate the QR code image data
+	const qrCode = await dopple.startAR();
+
+	// Create an image element to display the QR code
+	if (qrCode) {
+  		const img = document.createElement("img");
+  		img.src = qrCode;
+  		img.alt = "QR code to launch Augmented Reality";
+
+  		document.getElementById("qr-container").appendChild(img);
+	}
+	</script>
 	</head>
 	<body>
 		<div id="menus">
@@ -215,7 +231,9 @@
 				<option value="2">Hold On</option>
 			</select>
 			<br>
+			<div id="qr-container"></div>
 			</p>
+
 		</div>
 		<div id="app"></div>
 		<div id="loader" style="position: absolute; top: 2px; right: 2px"></div>
